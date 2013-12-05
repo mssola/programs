@@ -1,7 +1,5 @@
 /*
  * Copyright (C) 2013 Miquel Sabaté Solà <mikisabate@gmail.com>
- * This file is licensed under the GPL v3.
- * See the LICENSE file.
  */
 
 #include <stdio.h>
