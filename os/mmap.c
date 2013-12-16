@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
     case 0:
         strcat(file, "!!!MODIFIED!!!\n");
         printf("Child says!\n%s", file);
+        munmap(file, 4096);
         return (EXIT_SUCCESS);
     }
     printf("Parent says!\n%s", file);
