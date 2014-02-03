@@ -1,4 +1,3 @@
-- C té elf.
 
 - Teoria.
 - Elf + md5 + ...
