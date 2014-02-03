@@ -1,0 +1,6 @@
+package graph
+
+
+func KruskalSpanningTree() {
+
+}
