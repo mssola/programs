@@ -13,5 +13,6 @@ To compile each example separately you have to compile the common.go file too.
   interrupt them.
 * fan_in.go: basically the same as the timeout but the Alice and Bob channels
   are joined into the same channel.
+* quit.go: Alice and Bob stop talking when they receive the quit signal.
 
 
