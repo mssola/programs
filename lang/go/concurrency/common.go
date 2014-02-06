@@ -18,4 +18,21 @@ func Boring(msg string) <-chan string {
     return c
 }
 
+// Same as the Boring function but with channels.
+func BoringChan(msg string, quit chan bool, out chan string) <-chan string {
+    c := make(chan string)
+    go func() {
+        for i := 0; ; i++ {
+            select {
+            case c <- fmt.Sprintf("%s %d", msg, i):
+                // Doing nothing.
+            case <-quit:
+                out <- msg + " says good bye!"
+                return
+            }
+        }
+    }()
+    return c
+}
+
 
