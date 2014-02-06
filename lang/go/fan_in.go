@@ -1,11 +1,25 @@
 package main
 
 import (
-    "time"
     "fmt"
+    "time"
     "os"
     "strconv"
 )
+
+// In the fan in pattern we join similar channels into one.
+func fanIn(first, second <-chan string) <-chan string {
+    c := make(chan string)
+    go func() {
+        for {
+            select {
+            case s := <-first: c <- s
+            case s := <-second: c <- s
+            }
+        }
+    }()
+    return c
+}
 
 func main() {
     // Get how many seconds Bob and Alice are allowed to speak.
@@ -17,20 +31,19 @@ func main() {
         panic("what kind of integers are you passing me ? :(")
     }
 
-    // Let there be channels.
+    // Some channels.
     bob := Boring("Bob")
     alice := Boring("Alice")
+    fanned := fanIn(bob, alice)
     timeout := time.After(time.Duration(seconds) * time.Second)
 
-    // And let them talk.
+    // Let's talk!
     for {
         select {
-        case s := <-bob:
-            fmt.Println(s)
-        case s := <-alice:
+        case s := <-fanned:
             fmt.Println(s)
         case <-timeout:
-            fmt.Println("You've talked too much!")
+            fmt.Println("Enough talking!")
             os.Exit(0)
         }
     }
