@@ -34,5 +34,3 @@ func BoringChan(msg string, quit chan bool, out chan string) <-chan string {
     }()
     return c
 }
-
-

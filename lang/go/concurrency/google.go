@@ -66,4 +66,3 @@ func main() {
     fmt.Println(results)
     fmt.Println(elapsed)
 }
-
