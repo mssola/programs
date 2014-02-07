@@ -15,5 +15,10 @@ To compile each example separately you have to compile the common.go file too.
   are joined into the same channel.
 * quit.go: Alice and Bob stop talking when they receive the quit signal.
 * sieve.go: Retrieve prime numbers through a daisy-chain pattern.
+* google.go: Search stuff concurrently through multiple replicas.
+
+## Misc
+
+* decorators.go: showing the decorators pattern in Go.
 
 
