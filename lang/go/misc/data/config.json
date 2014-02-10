@@ -1,0 +1,37 @@
+
+{
+    "Database": {
+        "Production": {
+            "Dbname": "golang",
+            "Host": "localhost",
+            "User": "mssola",
+            "Password": "1234"
+        },
+        "Development": {
+            "Dbname": "golang-dev",
+            "Host": "localhost",
+            "User": "mssola",
+            "Password": "1234"
+        },
+        "Staging": {
+            "Dbname": "golang-staging",
+            "Host": "localhost",
+            "User": "mssola",
+            "Password": "1234"
+        },
+        "Test": {
+            "Dbname": "golang-test",
+            "Host": "localhost",
+            "User": "mssola",
+            "Password": "1234"
+        }
+    },
+
+    "Redis": {
+        "Socket": "/tmp/redis.sock",
+        "Db": "1"
+    }
+}
+
+
+
