@@ -20,5 +20,5 @@ To compile each example separately you have to compile the common.go file too.
 ## Misc
 
 * decorators.go: showing the decorators pattern in Go.
-
+* redis.go: using Redis with pool connections, pipelining, etc.
 

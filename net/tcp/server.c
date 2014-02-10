@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013.2014 Miquel Sabaté Solà <mikisabate@gmail.com>
+ * Copyright (C) 2013-2014 Miquel Sabaté Solà <mikisabate@gmail.com>
  */
 
 #include <stdio.h>

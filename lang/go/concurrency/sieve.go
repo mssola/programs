@@ -1,3 +1,5 @@
+// Copyright (C) 2014 Miquel Sabaté Solà <mikisabate@gmail.com>
+
 package main
 
 // Send the sequence 2, 3, 4, ... to channel 'ch'.
