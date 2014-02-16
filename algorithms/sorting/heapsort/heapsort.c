@@ -34,7 +34,7 @@ void heapsort(int *heap, int n)
     for (i= (n - 1)/2; i >= 0; i--)
         heapify(heap, i, n - 1);
 
-    /* Second step: remopve, insert and reconstruct. */
+    /* Second step: remove, insert and reconstruct. */
     for (i = n - 1; i > 0; i--) {
         tmp = heap[0];
         heap[0] = heap[i];
