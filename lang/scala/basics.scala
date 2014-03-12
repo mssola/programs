@@ -25,7 +25,7 @@ val lala = "They stood outside the \"Rose and Crown\""
 val html = """<form id="daform">
                 <p>Press belo', Joe</p>
              |  <input type="submit">
-              </form>"""
+//               </form>"""
 
 /*
  * Functions.
@@ -153,7 +153,7 @@ while (i < 10) {
 println(i)
 
 // Conditionals are done with if-else. There's no ternary operator. Switches
-// are done through "Pattern matching" (later).
+// are done through "Pattern matching" (See the re.scala file).
 if (i < 10) {
   println("Lesser")
 } else if (i == 10) {
