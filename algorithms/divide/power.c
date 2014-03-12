@@ -17,6 +17,7 @@ int power(unsigned int a, unsigned int n)
 int main()
 {
     printf("%d\n", power(2, 4));
+    printf("%d\n", power(2, 3));
     printf("%d\n", power(3, 3));
 }
 
