@@ -31,6 +31,14 @@ val html = """<form id="daform">
  * Functions.
  */
 
+// Variable-length arguments.
+def capitalizeAll(args: String*) = {
+  args.map { arg =>
+    arg.capitalize
+  }
+}
+println(capitalizeAll("miquel", "sabaté"))
+
 // Recursive function have to define a return type because the compiler
 // can't infer it for us.
 def recursive(a:Int, b:Int):Unit = {
