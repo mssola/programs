@@ -105,6 +105,13 @@ try {
   }
 }
 
+// This is a safer way to get things.
+val res1 = b.get("first")
+val undef = b.get("undefined")
+println(res1.get)
+println(undef.isDefined)
+println(undef.getOrElse(1))
+
 /*
  * Sets.
  */
@@ -121,6 +128,9 @@ val divideInts = (x:Int, y:Int) => (x / y, x % y)
 val d = divideInts(10, 3)
 print(d._1 + " ")
 println(d._2)
+
+// Syntactic sugar to create 2-sized tuples.
+val tup = 1 -> 2
 
 
 /*

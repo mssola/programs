@@ -37,6 +37,14 @@ println(bigger(-1))
 println(bigger("thing"))
 
 
+// We can also use tuples.
+val net = ("localhost", 9000)
+net match {
+  case ("localhost", port) => println("Localhost at port: " + port)
+  case (host, port) => println("Host: " + host + " port: " + port)
+}
+
+
 /**
  * We can also match classes. With the case class construct, we can match
  * classes without instantiating them.
