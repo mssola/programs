@@ -76,3 +76,128 @@ cc.quack
  */
 
 type Accumulator = C
+
+
+/**
+ * Traits. Traits are a collection of fields and behaviors that can be
+ * later mixed in a class. The cool thing about traits is that classes
+ * can mix in multiple traits.
+ */
+
+trait Car {
+  val brand: String
+}
+
+trait Shiny {
+  val shineRefraction: Int
+}
+
+// Even if the syntax differ, here, extends and with mean the same.
+class BMW extends Car with Shiny {
+  val brand = "BMW"
+  val shineRefraction = 12
+}
+
+val bmw = new BMW
+println(bmw.shineRefraction)
+
+
+/**
+ * Generics.
+ */
+
+trait Cache[K, V] {
+  def get(key: K): V
+  def put(key: K, value: V)
+  def delete(key: K)
+}
+
+// Methods can also have type parameters introduced.
+def remove[K](key: K) = { /* Doing nothing :P */ }
+
+
+/**
+ * The apply method. It's a nice syntactic sugar for when a class or object
+ * has one main use.
+ */
+
+class Bar {
+  def apply() = 0
+}
+
+val bar = new Bar
+println(bar())
+
+
+/**
+ * Objects. Objects are used to hold single instances of a class. They
+ * are often used for factories.
+ */
+
+object Timer {
+  var count = 0
+
+  def current() = {
+    count += 1
+    count
+  }
+}
+
+println(Timer.current())
+
+/**
+ * Moreover, inside a package it's not allowed to define functions or
+ * values. If we want to define package values/functions, we can put them
+ * inside an object.
+ */
+
+/*
+  package example {
+    object Values {
+      val VALUE = 1
+    }
+  }
+  println(example.Values.VALUE)
+*/
+
+
+/**
+ * Objects and classes can have the same name. The object is called then
+ * the "Companion Object". This technique is used to create factories.
+ * Objects can also implement the apply method. Therefore, we can have
+ * the following.
+ */
+
+class Bar2(foo: String) {
+  val f = foo
+}
+
+object Bar2 {
+  def apply(foo: String) = new Bar2(foo)
+}
+
+val bar2 = Bar2("asd")
+println(bar2.f)
+
+
+/**
+ * Functions are objects. A function is a s set of traits. That is, a
+ * function that takes one argument is an instance of a Function1 trait.
+ * This trait defines the apply method. Let's do something similar.
+ */
+
+object addOne extends Function1[Int, Int] {
+  def apply(m: Int): Int = m + 1
+}
+
+println(addOne(1))
+
+/*
+ * A nice shortcut for this is the (Int => Int) syntax. Therefore, the
+ * following example does the same than the previous example but by using
+ * a class (the same can be done in an object, of course).
+ */
+
+class AddOne extends (Int => Int) {
+  def apply(m: Int) = m + 1
+}
