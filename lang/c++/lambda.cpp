@@ -2,28 +2,32 @@
  * Copyright (C) 2014 Miquel Sabaté Solà <mikisabate@gmail.com>
  */
 
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
-using namespace std;
-
 
 int main(int argc, char *argv[])
 {
-    vector<string> v;
+	std::vector<std::string> v;
 
-    // Adding elements through a lambda expression.
-    auto l = [&v](string x) { v.push_back(x); };
-    l("hello");
-    l("bye");
-    for (auto s : v)
-        cout << s << endl;
+	// Adding elements through a lambda expression.
+	auto l = [&v](std::string x) {
+		v.push_back(x);
+	};
 
-    // Using the "for_each" new function.
-    for_each(v.begin(), v.end(), [](string &x) {
-        if (x.size() > 0)
-            x[0] = toupper(x[0]);
-    });
-    for (auto s : v)
-        cout << s << endl;
+	l("hello");
+	l("bye");
+	for (const auto &s : v) {
+		std::cout << s << std::endl;
+	}
+
+	// Using the "for_each" new function.
+	for_each(v.begin(), v.end(), [](std::string &x) {
+		if (x.size() > 0) {
+			x[0] = std::toupper(x[0]);
+		}
+	});
+	for (const auto &s : v) {
+		std::cout << s << std::endl;
+	}
 }
