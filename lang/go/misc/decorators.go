@@ -1,9 +1,11 @@
 // Copyright (C) 2014 Miquel Sabaté Solà <mikisabate@gmail.com>
+// This file is licensed under the MIT license.
+// See the LICENSE file.
 
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 type Func func(i int) int
@@ -11,23 +13,22 @@ type Func func(i int) int
 // Simple decorator that multiplies the result by 4 if the original value was
 // lesser than 4.
 func decorator(f Func) Func {
-    return func(i int) int {
-        res := f(i)
-        if i < 4 {
-            return res * 4
-        }
-        return res;
-    }
+	return func(i int) int {
+		res := f(i)
+		if i < 4 {
+			return res * 4
+		}
+		return res
+	}
 }
 
 func original(i int) int {
-    return i
+	return i
 }
 
 func main() {
-    decorated := decorator(original)
+	decorated := decorator(original)
 
-    fmt.Println(decorated(2)) // => 2 * 4
-    fmt.Println(decorated(5)) // => 5
+	fmt.Println(decorated(2)) // => 2 * 4
+	fmt.Println(decorated(5)) // => 5
 }
-

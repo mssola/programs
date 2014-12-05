@@ -1,5 +1,7 @@
 /*
- * Copyright (C) 2013-2014 Miquel Sabaté Solà <mikisabate@gmail.com>
+ * Copyright (C) 2014 Miquel Sabaté Solà <mikisabate@gmail.com>
+ * This file is licensed under the MIT license.
+ * See the LICENSE file.
  */
 
 #include <stdio.h>
@@ -34,8 +36,9 @@ int main(int argc, char *argv[])
 		 * detects an incoming datagram for this process, it will wake it.
 		 */
 		length = sizeof(client);
-		if ((n = recvfrom(fd, request, SIZE, 0, (SA) &client, (socklen_t *) &length)) < 0)
+		if ((n = recvfrom(fd, request, SIZE, 0, (SA) &client, (socklen_t *) &length)) < 0) {
 			perror("Error on recvfrom.");
+		}
 
 		/* Process the request... */
 		printf("Received: %s, Length: %i\n", request, length);
