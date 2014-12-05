@@ -1,6 +1,8 @@
 
-UDP
----
+# UDP
 
-- http://www.ietf.org/rfc/rfc768.txt
-- http://en.wikipedia.org/wiki/User_Datagram_Protocol
+An example of the UDP protocol. Some links:
+
+- The [RFC](http://www.ietf.org/rfc/rfc768.txt).
+- The [wikipedia article](http://en.wikipedia.org/wiki/User_Datagram_Protocol).
+

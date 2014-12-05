@@ -4,6 +4,14 @@
 
 #include <stdio.h>
 
+/**
+ * Given a terrain, compute the maximum volume of water that would fit without
+ * spilling.
+ *
+ * This is from a Twitter interview as explained here:
+ * http://qandwhat.apps.runkite.com/i-failed-a-twitter-interview/
+ */
+
 int volume(int *land, int length)
 {
     int l_max = 0, r_max = 0;

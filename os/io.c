@@ -10,6 +10,8 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
+// Nothing to glamorous, just a collection of IO-related system calls.
+
 int main(int argc, char *argv[])
 {
 	int count;

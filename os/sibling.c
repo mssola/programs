@@ -9,6 +9,8 @@
 #include <sys/types.h>
 #include <sys/time.h>
 
+// A classic problem in OS courses. I had this one in my first OS course at the
+// university. Easy as pie :)
 
 int main(int argc, char *argv[])
 {
