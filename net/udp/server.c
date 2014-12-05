@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
          * detects an incoming datagram for this process, it will wake it.
          */
         length = sizeof(client);
-        if ((n = recvfrom(fd, request, SIZE, 0, (SA) &client, &length)) < 0)
+        if ((n = recvfrom(fd, request, SIZE, 0, (SA) &client, (socklen_t *) &length)) < 0)
             perror("Error on recvfrom.");
 
         /* Process the request... */

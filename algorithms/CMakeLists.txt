@@ -1,0 +1,4 @@
+
+compile("*.c")
+compile("*.cpp")
+

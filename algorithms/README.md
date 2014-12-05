@@ -1,4 +1,12 @@
 
+- graphs: dijkstra & kruskal
+
+- Trees:
+  - Teoria.
+  - Arbes binaris.
+  - AVL.
+  - Splay trees.
+
 - Compressing common long strings.
 - Teoria.
     http://bigocheatsheet.com

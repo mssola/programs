@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
      * At this point, the kernel will put to sleep this process. When the
      * reply has been received, the kernel will wake up this process again.
      */
-    if ((n = recvfrom(fd, reply, SIZE, 0, (SA) NULL, (int *) NULL)) < 0)
+    if ((n = recvfrom(fd, reply, SIZE, 0, (SA) NULL, (socklen_t *) NULL)) < 0)
         perror("Error on recvfrom.");
 
     /* Process the request... */

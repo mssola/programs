@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <err.h>
 #include <sys/signal.h>
+#include <unistd.h>
 
 
 void handler(int s)

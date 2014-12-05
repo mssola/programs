@@ -8,6 +8,9 @@
 #include <fcntl.h>
 #include <err.h>
 #include <sys/mman.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 
 int main(int argc, char *argv[])
