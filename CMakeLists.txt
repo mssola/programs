@@ -18,7 +18,7 @@ else()
 endif()
 
 # Compiler flags.
-set(CMAKE_C_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
+set(CMAKE_C_FLAGS "${CMAKE_CXX_FLAGS} -std=c11 -Werror")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -Werror")
 
 

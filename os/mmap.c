@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
      * would've passed MAP_SHARED instead of MAP_PRIVATE. In this case the
      * child process would efectively changed this file.
      */
-    file = (char *) mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_FILE|MAP_PRIVATE, fd, 0);
+    file = (char *) mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE, fd, 0);
     if (file == MAP_FAILED)
         err(1, "map");
 
