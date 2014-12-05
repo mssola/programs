@@ -20,7 +20,7 @@ programs are not only stuff that I've learned during my time as a programmer,
 but it also means that I had the time/patience to actually write them in a
 "useful" way. Note that the term "useful" is quite subjective. By that I mean:
 
-- First of all, they are/were useful for me.
+- First of all, they are/were useful to me.
 - Some of these programs/scripts are *really* old and might seem ridiculous to
 me from a technical point of view. I've just added them in this repo for
 historical/nostalgic reasons, and adapted them to my current code

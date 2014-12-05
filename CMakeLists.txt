@@ -21,8 +21,7 @@ endif()
 set(CMAKE_C_FLAGS "${CMAKE_CXX_FLAGS} -std=c11 -Werror")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -Werror")
 
-
-# This macro will add an executable for each match of the given wildcard.
+# This function will add an executable for each match of the given wildcard.
 function(compile wildcard)
   file(GLOB_RECURSE files ${wildcard})
   foreach(file ${files})
