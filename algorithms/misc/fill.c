@@ -1,3 +1,6 @@
+/*
+ * Copyright (C) 2014 Miquel Sabaté Solà <mikisabate@gmail.com>
+ */
 
 #include <stdio.h>
 
@@ -8,10 +11,12 @@ int volume(int *land, int length)
     int right = length - 1;
 
     while (left < right) {
-        if (land[left] > l_max)
+        if (land[left] > l_max) {
             l_max = land[left];
-        if (land[right] > r_max)
+		}
+        if (land[right] > r_max) {
             r_max = land[right];
+		}
         if (l_max >= r_max) {
             volume += r_max - land[right];
             right--;

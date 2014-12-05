@@ -1,10 +1,14 @@
+/*
+ * Copyright (C) 2014 Miquel Sabaté Solà <mikisabate@gmail.com>
+ */
 
 #include <stdio.h>
 
 int power_of_two(unsigned int a)
 {
-    if (a < 2)
+    if (a < 2) {
         return 0;
+	}
     return (a & (a - 1)) == 0;
 }
 

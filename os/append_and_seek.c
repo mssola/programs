@@ -2,9 +2,9 @@
  * Copyright (C) 2014 Miquel Sabaté Solà <mikisabate@gmail.com>
  */
 
+#include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <fcntl.h>
 #include <unistd.h>
 
 /*
@@ -28,27 +28,28 @@
 
 int main(int argc, char *argv[])
 {
-    int fd, aux;
-    char buffer[16];
+	int fd, aux;
+	char buffer[16];
 
-    /* Let's write some data. */
-    if ((fd = open("/tmp/file.txt", O_CREAT | O_APPEND | O_RDWR, 0777)) < 0)
-        perror("open");
-    write(fd, "Hello", 5);
-    lseek(fd, 0, SEEK_SET);
-    write(fd, " World", 6);
+	/* Let's write some data. */
+	if ((fd = open("/tmp/file.txt", O_CREAT | O_APPEND | O_RDWR, 0777)) < 0) {
+		perror("open");
+	}
+	write(fd, "Hello", 5);
+	lseek(fd, 0, SEEK_SET);
+	write(fd, " World", 6);
 
-    /* Being naive. */
-    aux = read(fd, buffer, 11);
-    buffer[aux] = '\0';
-    printf("String: %s\n", buffer);
+	/* Being naive. */
+	aux = read(fd, buffer, 11);
+	buffer[aux] = '\0';
+	printf("String: %s\n", buffer);
 
-    /* The proper way to read. */
-    lseek(fd, 0, SEEK_SET);
-    aux = read(fd, buffer, 11);
-    buffer[aux] = '\0';
-    printf("String: %s\n", buffer);
+	/* The proper way to read. */
+	lseek(fd, 0, SEEK_SET);
+	aux = read(fd, buffer, 11);
+	buffer[aux] = '\0';
+	printf("String: %s\n", buffer);
 
-    close(fd);
-    exit(EXIT_SUCCESS);
+	close(fd);
+	exit(EXIT_SUCCESS);
 }

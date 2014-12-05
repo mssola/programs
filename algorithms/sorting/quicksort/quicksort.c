@@ -1,6 +1,8 @@
+/*
+ * Copyright (C) 2014 Miquel Sabaté Solà <mikisabate@gmail.com>
+ */
 
 #include <stdio.h>
-
 
 void swap(int *first, int *last)
 {
@@ -36,12 +38,14 @@ void quicksort(int *first, int *last)
         mid = first + ((last - first + 1) / 2);
         pivot = last;
         if (*first < *mid) {
-            if (*first >= *last)
+            if (*first >= *last) {
                 pivot = first;
-            else if (*mid < *last)
+			} else if (*mid < *last) {
                 pivot = mid;
-        } else if (*first < *last)
+			}
+        } else if (*first < *last) {
             pivot = first;
+		}
 
         // Do the partition operation and sort the sub-lists.
         pivot = partition(first, last, pivot);
@@ -56,14 +60,16 @@ int main(int argc, char *argv[])
     int v[] = {4, 65, 2, -31, 0, 99, 2, 83, 782, 1};
     int size = sizeof(v) / sizeof(v[0]);
 
-    for (i = 0; i < size; i++)
+    for (i = 0; i < size; i++) {
         printf("%i ", v[i]);
+	}
     printf("\n");
 
     quicksort(v, v + size - 1);
 
-    for (i = 0; i < size; i++)
+    for (i = 0; i < size; i++) {
         printf("%i ", v[i]);
+	}
     printf("\n");
     return 0;
 }
