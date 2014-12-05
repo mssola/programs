@@ -1,6 +1,8 @@
 # Copyright (C) 2014 Miquel Sabaté Solà <mikisabate@gmail.com>
 # This file is licensed under the MIT license.
 # See the LICENSE file.
+#
+# This file has been extracted from a talk by Xavier Noria.
 
 #
 # This is a simple script that creates a TCP server and then transfers
