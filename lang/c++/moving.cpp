@@ -45,6 +45,8 @@ int main(int argc, char *argv[])
 	// 	Thing t3(t2);
 	//
 	// This is because Thing has declared a user-defined move constructor.
-	// Doing this implicitly deletes the copy constructor.
+	// Doing this implicitly deletes the copy constructor. So our only option
+	// is to use the move constructor. We do that by using std::move.
+	Thing t3(std::move(t2));
 }
 
