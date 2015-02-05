@@ -1,7 +1,7 @@
 
 ## Programs
 
-This repository contains a set of random programs that I have been written with
+This repository contains a set of random programs that I have written with
 the sole purpose of learning. I have created a subdirectory for each main area.
 This way, we have:
 
