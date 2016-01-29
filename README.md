@@ -62,7 +62,7 @@ given interpreter/compiler and passing the desired file.
 
 ## License
 
-Copyright (c) 2014 Miquel Sabaté Solà
+Copyright (c) 2014-2016 Miquel Sabaté Solà
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
